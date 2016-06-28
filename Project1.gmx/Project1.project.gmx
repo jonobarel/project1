@@ -6,14 +6,19 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_asteroid_s</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_asteroid</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_bullet</object>
+    <object>objects\obj_asteroid</object>
+    <object>objects\obj_asteroid_s</object>
+    <object>objects\obj_score</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
