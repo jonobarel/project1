@@ -19,6 +19,7 @@
     <object>objects\obj_asteroid</object>
     <object>objects\obj_asteroid_s</object>
     <object>objects\obj_score</object>
+    <object>objects\obj_game</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

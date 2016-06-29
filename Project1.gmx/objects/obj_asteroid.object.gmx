@@ -80,6 +80,7 @@ small_2.direction = direction-30;
           <argument>
             <kind>1</kind>
             <string>instance_destroy();
+global.points=global.points+1;
 </string>
           </argument>
         </arguments>
