@@ -38,6 +38,7 @@ for (i=0; i&lt;5; i+=1)
     ast = instance_create(ast_x, ast_y,obj_asteroid);
 };
 
+
 </string>
           </argument>
         </arguments>
@@ -61,6 +62,12 @@ for (i=0; i&lt;5; i+=1)
           <argument>
             <kind>1</kind>
             <string>///Game Loop
+
+
+if (instance_number(obj_asteroid) == 0)
+{
+    game_restart();
+};
 
 </string>
           </argument>
