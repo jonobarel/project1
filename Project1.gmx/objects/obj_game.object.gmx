@@ -26,18 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Game Setup
-
-for (i=0; i&lt;5; i+=1)
-{
-    radius = irandom(770)+30;
-    angle = irandom(360)/(2*pi);
-
-    ast_x = room_width/2+radius*cos(angle);
-    ast_y = room_height/2+radius*sin(angle);
-
-    ast = instance_create(ast_x, ast_y,obj_asteroid);
-};
-
+global.level=0;
 
 </string>
           </argument>
@@ -63,10 +52,21 @@ for (i=0; i&lt;5; i+=1)
             <kind>1</kind>
             <string>///Game Loop
 
-
 if (instance_number(obj_asteroid) == 0)
 {
-    game_restart();
+
+    global.level+=1;
+    for (i=0; i&lt;global.level*1.5+1; i+=1)
+    {
+        radius = irandom(770)+30;
+        angle = irandom(360)/(2*pi);
+    
+        ast_x = room_width/2+radius*cos(angle);
+        ast_y = room_height/2+radius*sin(angle);
+    
+        ast = instance_create(ast_x, ast_y,obj_asteroid);
+    };
+
 };
 
 </string>
@@ -93,8 +93,6 @@ if (instance_number(obj_asteroid) == 0)
             <kind>1</kind>
             <string>draw_set_colour(c_white);
 draw_text(32,600,"DEBUG: Asteroids = "&amp;instance_number(obj_asteroid));
-
-    draw_text(50,50,"hello world");
 </string>
           </argument>
         </arguments>
