@@ -107,7 +107,7 @@ image_angle+=rotation_speed;
           <argument>
             <kind>1</kind>
             <string>instance_destroy();
-global.points=global.points+1;
+global.points+=1;
 </string>
           </argument>
         </arguments>
@@ -151,7 +151,21 @@ global.points=global.points+1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_restart()
+            <string>//game_restart();
+
+show_debug_message("number of asteroids: "+string(instance_number(obj_asteroid)));
+
+show_debug_message("Asteroid locations:");
+with (obj_asteroid)
+{
+    show_debug_message("X = "+string(x)+", Y = "+string(y));
+};
+
+with (inst_player) {
+    show_debug_message("Player ship at: X = "+string(x)+", Y = "+string(y));
+};
+  
+room_goto_next();
 </string>
           </argument>
         </arguments>

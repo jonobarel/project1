@@ -49,10 +49,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_white);
-draw_text(32,32,global.points);
-
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

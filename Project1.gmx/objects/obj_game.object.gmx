@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Game Setup
-global.level=0;
+level=0;
+global.points = 0;
+
 
 </string>
           </argument>
@@ -51,24 +53,24 @@ global.level=0;
           <argument>
             <kind>1</kind>
             <string>///Game Loop
-
-if (instance_number(obj_asteroid) == 0)
-{
-
-    global.level+=1;
-    for (i=0; i&lt;global.level*1.5+1; i+=1)
+if(room_get_name(room) == 'rm_game') {
+    if (instance_number(obj_asteroid) == 0)
     {
-        radius = irandom(770)+30;
-        angle = irandom(360)/(2*pi);
     
-        ast_x = room_width/2+radius*cos(angle);
-        ast_y = room_height/2+radius*sin(angle);
+        level+=1;
+        for (i=0; i&lt;level*1.5+1; i+=1)
+        {
+            radius = irandom(500)+100;
+            angle = irandom(360)/(2*pi);
+        
+            ast_x = room_width/2+radius*cos(angle);
+            ast_y = room_height/2+radius*sin(angle);
+        
+            ast = instance_create(ast_x, ast_y,obj_asteroid);
+        };
     
-        ast = instance_create(ast_x, ast_y,obj_asteroid);
     };
-
 };
-
 </string>
           </argument>
         </arguments>
@@ -92,7 +94,13 @@ if (instance_number(obj_asteroid) == 0)
           <argument>
             <kind>1</kind>
             <string>draw_set_colour(c_white);
-draw_text(32,600,"DEBUG: Asteroids = "&amp;instance_number(obj_asteroid));
+draw_text(32,32,"SCORE: "+string(global.points));
+draw_text(32,64,"LEVEL: "+string(level));
+
+//DEBUG
+draw_text(32,600,"DEBUG: Asteroids remaining = "+string(instance_number(obj_asteroid)));
+
+
 </string>
           </argument>
         </arguments>
@@ -117,6 +125,31 @@ draw_text(32,600,"DEBUG: Asteroids = "&amp;instance_number(obj_asteroid));
             <kind>1</kind>
             <string>game_restart();
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room_get_name(room) == 'rm_gameOver') {
+  game_restart();
+};
 </string>
           </argument>
         </arguments>

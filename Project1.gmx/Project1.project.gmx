@@ -11,7 +11,9 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_asteroid</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_gameOver</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -23,6 +25,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
+    <room>rooms\rm_gameOver</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
