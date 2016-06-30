@@ -28,6 +28,10 @@
             <string>//init
 lives = 3;
 invulnerable = false;
+on = true;
+
+image_speed = 0;
+image_index = 0;
 </string>
           </argument>
         </arguments>
@@ -51,6 +55,10 @@ invulnerable = false;
           <argument>
             <kind>1</kind>
             <string>invulnerable = false;
+//stop flickering
+    image_speed = 0;
+    image_index = 0;
+
 </string>
           </argument>
         </arguments>
@@ -76,6 +84,8 @@ invulnerable = false;
             <string>if (speed*0.9975 &lt;= 0.0001) 
     speed = 0 
     else speed = speed*0.9975;
+    
+
 </string>
           </argument>
         </arguments>

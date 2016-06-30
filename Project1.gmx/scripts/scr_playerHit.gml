@@ -13,5 +13,7 @@ else
         lives-=1;
         alarm_set(0,room_speed*2)//invulnerable for 2 seconds
         invulnerable = true
+        
+        image_speed = 15.0/room_speed;
     };
 }};
