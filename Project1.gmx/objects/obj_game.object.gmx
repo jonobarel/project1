@@ -76,7 +76,7 @@ if(room_get_name(room) == 'rm_game') {
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -97,6 +97,7 @@ if(room_get_name(room) == 'rm_game') {
 
 draw_text(32,32,"SCORE: "+string(global.points));
 draw_text(32,64,"LEVEL: "+string(global.level));
+draw_text(32,96,"Lives: "+string(inst_player.lives)); 
     
 //DEBUG
 draw_text(32,600,"DEBUG: Asteroids remaining = "+string(instance_number(obj_asteroid)));
