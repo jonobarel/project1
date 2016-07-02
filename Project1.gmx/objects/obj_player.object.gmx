@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_character</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -108,7 +108,7 @@ image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = image_angle - 2;
+            <string>    image_angle = image_angle - 2;
 </string>
           </argument>
         </arguments>
@@ -131,8 +131,9 @@ image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>motion_add(image_angle, 0.2);
-if (speed &gt; 5) then speed = 5
+            <string>    motion_add(image_angle, 0.2);
+    if (speed &gt; 5) then speed = 5
+
 </string>
           </argument>
         </arguments>
@@ -155,7 +156,8 @@ if (speed &gt; 5) then speed = 5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=image_angle+2;
+            <string>//if (!objects_frozen())
+    image_angle=image_angle+2;
 </string>
           </argument>
         </arguments>
@@ -200,10 +202,11 @@ if (speed &gt; 5) then speed = 5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bullet = instance_create(x,y,obj_bullet);
-bullet.direction = image_angle;
-bullet.image_angle = image_angle;
-bullet.speed = 15;
+            <string>    bullet = instance_create(x,y,obj_bullet);
+    bullet.direction = image_angle;
+    bullet.image_angle = image_angle;
+    bullet.speed = 15;
+
 </string>
           </argument>
         </arguments>

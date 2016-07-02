@@ -11,26 +11,41 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Game Setup
-global.level=0;
-global.points = 0;
-
-
-</string>
+            <kind>9</kind>
+            <script>game_setup</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -56,19 +71,20 @@ global.points = 0;
 if(room_get_name(room) == 'rm_game') {
     if (instance_number(obj_asteroid) == 0)
     {
-    
         global.level+=1;
         for (i=0; i&lt;global.level*1.5+1; i+=1)
         {
             radius = irandom(500)+100;
-            angle = irandom(360)/(2*pi);
+            angle = irandom(360)/(0.5*pi);
         
-            ast_x = room_width/2+radius*cos(angle);
-            ast_y = room_height/2+radius*sin(angle);
+            //when I was using a random radius, asteroids were getting created far off-screen. This will ensure that their distance is capped.
+            x_offset = min(room_width/2,(irandom(1)*2-1)*radius*cos(angle));
+            ast_x = room_width/2+x_offset;
+            y_offset = min(room_height/2, (irandom(1)*2-1)*radius*sin(angle));
+            ast_y = room_height/2+y_offset;
         
             ast = instance_create(ast_x, ast_y,obj_asteroid);
         };
-    
     };
 };
 </string>

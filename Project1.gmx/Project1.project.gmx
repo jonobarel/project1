@@ -16,7 +16,11 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_playerHit.gml</script>
+    <script>scripts\game_setup.gml</script>
+    <script>scripts\player_hit.gml</script>
+    <script>scripts\freeze_objects.gml</script>
+    <script>scripts\unfreeze_objects.gml</script>
+    <script>scripts\objects_frozen.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -26,6 +30,7 @@
     <object>objects\obj_score</object>
     <object>objects\obj_game</object>
     <object>objects\obj_gameOver</object>
+    <object>objects\obj_character</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
